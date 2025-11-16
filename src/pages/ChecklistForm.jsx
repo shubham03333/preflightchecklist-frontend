@@ -53,6 +53,7 @@ export default function ChecklistForm(){
               </tr>
             ))}
           </tbody>
+        
         </table>
       </div>
       <div className="text-right"><button onClick={handleSubmit} className="bg-sky-600 text-white px-4 py-2 rounded shadow">Save Checklist</button></div>
