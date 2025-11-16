@@ -1,5 +1,6 @@
 import axios from 'axios';
-const BASE = import.meta.env.VITE_API_URL || 'http://localhost:8000/api';
+// const BASE = import.meta.env.VITE_API_URL || 'http://localhost:8000/api';
+const BASE = import.meta.env.VITE_API_URL || 'https://shubh123409.pythonanywhere.com/api';
 export const api = axios.create({ baseURL: BASE, headers: { 'Content-Type': 'application/json' } });
 export const getChecklists = () => api.get('/checklists/').then(r=>r.data);
 export const getChecklist = (id) => api.get(`/checklists/${id}/`).then(r=>r.data);
