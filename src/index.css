@@ -1,0 +1,8 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* small extra helpers / theme */
+:root { --brand: #0ea5e9; }
+body { @apply bg-gray-100; }
+.card { @apply bg-white shadow-md rounded-lg p-4; }

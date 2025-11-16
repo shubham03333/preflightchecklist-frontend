@@ -1,0 +1,11 @@
+import axios from 'axios';
+const BASE = import.meta.env.VITE_API_URL || 'http://localhost:8000/api';
+export const api = axios.create({ baseURL: BASE, headers: { 'Content-Type': 'application/json' } });
+export const getChecklists = () => api.get('/checklists/').then(r=>r.data);
+export const getChecklist = (id) => api.get(`/checklists/${id}/`).then(r=>r.data);
+export const createChecklist = (payload) => api.post('/checklists/', payload).then(r=>r.data);
+export const updateChecklist = (id,payload) => api.patch(`/checklists/${id}/`, payload).then(r=>r.data);
+export const deleteChecklist = (id) => api.delete(`/checklists/${id}/`);
+export const addItem = (id,payload) => api.post(`/checklists/${id}/add_item/`, payload).then(r=>r.data);
+export const updateItem = (id,payload) => api.patch(`/items/${id}/`, payload).then(r=>r.data);
+export const deleteItem = (id) => api.delete(`/items/${id}/`);
